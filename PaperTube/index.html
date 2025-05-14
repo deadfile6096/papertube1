@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="papertube">
+    <meta name="theme-color" content="#ffffff">
+    <title>PaperTube</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Permanent+Marker&family=Indie+Flower&family=Gloria+Hallelujah&family=Rock+Salt&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1 class="logo">PaperTube</h1>
+            <svg class="paper-logo" viewBox="0 0 100 100" width="50" height="50">
+                <!-- Неаккуратный человечек, нарисованный карандашом -->
+                <!-- Голова -->
+                <circle cx="50" cy="30" r="20" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray: 2,0.5" />
+                <!-- Волосы -->
+                <path d="M35,20 C40,10 60,10 65,20" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M40,15 C45,5 55,5 60,15" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+                <!-- Глаза -->
+                <ellipse cx="40" cy="25" rx="5" ry="6" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+                <ellipse cx="60" cy="25" rx="5" ry="6" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+                <!-- Зрачки -->
+                <circle cx="40" cy="25" r="2" fill="#000" />
+                <circle cx="60" cy="25" r="2" fill="#000" />
+                <!-- Рот -->
+                <path d="M40,40 C45,45 55,45 60,40" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+                <!-- Тело -->
+                <path d="M50,50 L50,80" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-dasharray="3,1" />
+                <!-- Руки -->
+                <path d="M50,60 L30,70" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-dasharray="2,0.5" />
+                <path d="M50,60 L70,70" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-dasharray="2,0.5" />
+                <!-- Ноги -->
+                <path d="M50,80 L35,95" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-dasharray="2,0.5" />
+                <path d="M50,80 L65,95" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-dasharray="2,0.5" />
+            </svg>
+        </div>
+        <div class="wtf-container">
+            <svg class="wtf-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <!-- W -->
+                <path d="M10,10 L20,50 L30,30 L40,50 L50,10" stroke="black" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                
+                <!-- T -->
+                <path d="M60,10 L100,10 M80,10 L80,50" stroke="black" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                
+                <!-- F -->
+                <path d="M110,10 L110,50 M110,10 L140,10 M110,30 L135,25" stroke="black" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                
+                <!-- ? -->
+                <path d="M150,15 C160,0 180,0 180,20 C180,30 165,35 165,40 M165,50 L165,55" stroke="black" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                
+                <!-- ! -->
+                <path d="M190,15 L190,40 M190,50 L190,55" stroke="black" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                
+                <!-- Неаккуратные линии и капли -->
+                <path d="M15,15 L25,20 M35,25 L45,20 M70,15 L90,20 M120,15 L130,20 M155,25 L175,20" stroke="black" stroke-width="1" fill="none" stroke-dasharray="2 1" />
+                <circle cx="22" cy="35" r="2" fill="black" />
+                <circle cx="95" cy="25" r="3" fill="black" />
+                <circle cx="140" cy="40" r="2" fill="black" />
+                <circle cx="170" cy="30" r="3" fill="black" />
+            </svg>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button class="search-btn">🔍</button>
+        </div>
+        <div class="menu-container">
+            <div class="menu-icon">≡</div>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <nav class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="active" data-tab="latest">
+                    <div class="menu-item">
+                        <span class="menu-icon">
+                            <svg class="hand-drawn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M4,21 L4,9 L12,3 L20,9 L20,21 L4,21 Z M8,21 L8,14 L16,14 L16,21" stroke="black" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></path>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Latest</span>
+                    </div>
+                </li>
+                <li data-tab="trending">
+                    <div class="menu-item">
+                        <span class="menu-icon">
+                            <svg class="hand-drawn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M12,3 C10,10 3,9 3,15 C3,18 5,21 12,21 C19,21 21,18 21,15 C21,9 14,10 12,3 Z" stroke="black" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(calc(var(--random-rotation, -3deg) + 3deg));"></path>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Trending</span>
+                    </div>
+                </li>
+                <li data-tab="favorites">
+                    <div class="menu-item">
+                        <span class="menu-icon">
+                            <svg class="hand-drawn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M12,4 C12,4 9,1 5,4 C1,7 2,12 5,15 C8,18 12,20 12,20 C12,20 16,18 19,15 C22,12 23,7 19,4 C15,1 12,4 12,4 Z" stroke="black" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(calc(var(--random-rotation, -4deg) + 4deg));"></path>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Favorites</span>
+                    </div>
+                </li>
+                <li data-tab="watched">
+                    <div class="menu-item">
+                        <span class="menu-icon">
+                            <svg class="hand-drawn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <circle cx="12" cy="12" r="8" stroke="black" fill="none" stroke-width="2" style="transform: rotate(calc(var(--random-rotation, -1deg) + 1deg));"></circle>
+                                <circle cx="12" cy="12" r="3" stroke="black" fill="none" stroke-width="2" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></circle>
+                                <path d="M17,7 L21,3 M7,7 L3,3 M17,17 L21,21 M7,17 L3,21" stroke="black" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></path>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Watched</span>
+                    </div>
+                </li>
+                <li data-tab="random">
+                    <div class="menu-item">
+                        <span class="menu-icon">
+                            <svg class="hand-drawn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                <rect x="5" y="5" width="14" height="14" rx="2" stroke="black" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(calc(var(--random-rotation, -5deg) + 5deg));"></rect>
+                                <circle cx="9" cy="9" r="1.5" fill="black" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></circle>
+                                <circle cx="15" cy="9" r="1.5" fill="black" style="transform: rotate(calc(var(--random-rotation, -3deg) + 3deg));"></circle>
+                                <circle cx="9" cy="15" r="1.5" fill="black" style="transform: rotate(calc(var(--random-rotation, -4deg) + 4deg));"></circle>
+                                <circle cx="15" cy="15" r="1.5" fill="black" style="transform: rotate(calc(var(--random-rotation, -1deg) + 1deg));"></circle>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Random</span>
+                    </div>
+                </li>
+                <li class="sidebar-divider"></li>
+                <li>
+                    <a href="https://x.com/papertubesol" target="_blank">
+                        <div class="menu-item">
+                            <span class="menu-icon">
+                                <svg class="hand-drawn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M5,18 C5,18 9,15 12,15 C15,15 19,18 19,18" stroke="black" fill="none" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></path>
+                                    <path d="M12,15 L12,3" stroke="black" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -1deg) + 1deg));"></path>
+                                    <path d="M7,8 L12,3 L17,8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(calc(var(--random-rotation, -3deg) + 3deg));"></path>
+                                </svg>
+                            </span>
+                            <span class="menu-text">Twitter</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://dexscreener.com" target="_blank">
+                        <div class="menu-item">
+                            <span class="menu-icon">
+                                <svg class="hand-drawn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M3,3 L21,3 L21,21 L3,21 L3,3 Z" stroke="black" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></path>
+                                    <path d="M7,17 L7,10" stroke="black" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -1deg) + 1deg));"></path>
+                                    <path d="M12,17 L12,7" stroke="black" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -3deg) + 3deg));"></path>
+                                    <path d="M17,17 L17,13" stroke="black" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></path>
+                                </svg>
+                            </span>
+                            <span class="menu-text">Dexscreener</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.pump.fun" target="_blank">
+                        <div class="menu-item">
+                            <span class="menu-icon">
+                                <svg class="hand-drawn-icon" viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M12,3 L12,21" stroke="black" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -1deg) + 1deg));"></path>
+                                    <path d="M12,3 C12,3 6,8 6,12 C6,16 12,21 12,21" stroke="black" fill="none" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></path>
+                                    <path d="M12,3 C12,3 18,8 18,12 C18,16 12,21 12,21" stroke="black" fill="none" stroke-width="2" stroke-linecap="round" style="transform: rotate(calc(var(--random-rotation, -3deg) + 3deg));"></path>
+                                    <circle cx="12" cy="7" r="2" stroke="black" fill="none" stroke-width="2" style="transform: rotate(calc(var(--random-rotation, -2deg) + 2deg));"></circle>
+                                </svg>
+                            </span>
+                            <span class="menu-text">Pump Fun</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="latest" class="tab-content active">
+                <div class="videos-grid">
+                    <!-- Видео будут добавлены через JavaScript -->
+                </div>
+            </section>
+            <section id="trending" class="tab-content">
+                <div class="videos-grid">
+                    <!-- Видео будут добавлены через JavaScript -->
+                </div>
+            </section>
+            <section id="favorites" class="tab-content">
+                <div class="videos-grid">
+                    <!-- Видео будут добавлены через JavaScript -->
+                </div>
+            </section>
+            <section id="watched" class="tab-content">
+                <div class="videos-grid">
+                    <!-- Видео будут добавлены через JavaScript -->
+                </div>
+            </section>
+            <section id="random" class="tab-content">
+                <div class="videos-grid">
+                    <!-- Видео будут добавлены через JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-controls">
+                <span class="close-modal">&times;</span>
+                <span class="like-button">♥</span>
+            </div>
+            <div id="video-container"></div>
+            
+            <!-- Комментарии внизу модального окна -->
+            <div class="video-comments">
+                <h2 class="comments-title">Comments</h2>
+                
+                <div class="comment-form">
+                    <div class="comment-avatar">👤</div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button class="comment-submit">POST</button>
+                </div>
+                
+                <div class="comments-list">
+                    <!-- Комментарии будут добавлены через JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="script.js"></script>
+    
+    <!-- Неаккуратный велосипед возле полосы прокрутки -->
+    <div class="bike-container">
+        <svg class="bike-svg" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+            <!-- Колеса -->
+            <circle cx="20" cy="40" r="15" fill="none" stroke="black" stroke-width="2" stroke-dasharray="2 1" />
+            <circle cx="80" cy="40" r="15" fill="none" stroke="black" stroke-width="2" stroke-dasharray="3 1" />
+            
+            <!-- Рама -->
+            <line x1="20" y1="40" x2="50" y2="20" stroke="black" stroke-width="3" />
+            <line x1="50" y1="20" x2="80" y2="40" stroke="black" stroke-width="3" />
+            <line x1="50" y1="20" x2="35" y2="40" stroke="black" stroke-width="3" />
+            
+            <!-- Руль -->
+            <line x1="50" y1="20" x2="55" y2="10" stroke="black" stroke-width="3" />
+            <line x1="55" y1="10" x2="45" y2="5" stroke="black" stroke-width="2" />
+            
+            <!-- Сиденье -->
+            <line x1="35" y1="40" x2="35" y2="25" stroke="black" stroke-width="2" />
+            <ellipse cx="35" cy="20" rx="8" ry="3" fill="black" />
+            
+            <!-- Педали -->
+            <circle cx="35" cy="40" r="5" fill="none" stroke="black" stroke-width="1" />
+            <line x1="35" y1="35" x2="35" y2="45" stroke="black" stroke-width="2" />
+        </svg>
+    </div>
+</body>
+</html>

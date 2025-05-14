@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Patrick Hand', cursive;
+  background: url('assets/crumpled-paper.jpg') center center / cover no-repeat fixed;
+  color: #000;
+}
+
+.background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -1;
+  background: inherit;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #ccc;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 0 black;
+}
+
+nav a.active, nav a:hover {
+  background-color: #eee;
+}
+
+main {
+  padding: 30px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 4px 4px 0 black;
+  transition: transform 0.1s ease-in-out;
+}
+
+.video-card:hover {
+  transform: translate(-2px, -2px);
+}
+
+.thumbnail {
+  font-size: 3em;
+  text-align: center;
+  padding: 20px;
+  border: 2px dashed black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #fdfdfd;
+}
+
+.title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  border-top: 2px solid black;
+  background-color: white;
+  box-shadow: inset 0 4px 0 black;
+  margin-top: 30px;
+}
